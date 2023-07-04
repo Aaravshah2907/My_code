@@ -1,6 +1,6 @@
 import os
 
-path1 = r"D:\Others\Encryptedtext"  # folder for exported text files
+path1 = r"E:\Others\Encryptedtext"  # folder for exported text files
 path1_exist = os.path.exists(path1)
 
 if path1_exist:
@@ -8,16 +8,14 @@ if path1_exist:
 else:
     os.mkdir(path1)
 
-key_file = open(f'{path1}/key_file.txt', 'r')
-key = key_file.read()[-11:]
-dec = key[0]
-key = key + "0123456789"
-key = key[1:11]
-key_file.close()
+with open(f'{path1}/key_file.txt', 'r') as key_file:
+    key = key_file.read()[-11:]
+    dec = key[0]
+    key = key + "0123456789"
+    key = key[1:11]
 
-input_file = open(f'{path1}/input_file.txt', 'r')
-inp = input_file.read()
-input_file.close()
+with open(f'{path1}/input_file.txt', 'r') as input_file:
+    inp = input_file.read()
 
 if key[0:10] == '0000000000':
     key = '8741890795'
