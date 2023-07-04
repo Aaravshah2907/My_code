@@ -16,8 +16,8 @@ text_original = ' ₹abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456
 key = 1111111111111111
 
 def func(s):
-    print(len(s))
-    f = []
+    print("Total Elements in this iteration:",len(s))
+    f = {}
     for element in s:
         if element not in main:
             f.append(element)
@@ -30,5 +30,5 @@ def func(s):
 
 for x in range(0,10):
     output = encrypter2.main(0,text_original,str(int(key*x)))
-    print("Iteration :", x)
+    print("Iteration:", x)
     func(output)
