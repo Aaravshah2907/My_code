@@ -24,7 +24,7 @@ def func(s):
             
     if f:
         print("Iteration Unsuccessful")
-        print("Elemnts left include: "f)
+        print("Elemnts left include: ",f)
     else:
         print("Iteration Successful")
 
