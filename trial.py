@@ -23,9 +23,10 @@ def func(s):
             f.append(element)
             
     if f:
-        print(f)
+        print("Iteration Unsuccessful")
+        print("Elemnts left include: "f)
     else:
-        print("Successful")
+        print("Iteration Successful")
 
 for x in range(0,10):
     output = encrypter2.main(0,text_original,str(int(key*x)))
