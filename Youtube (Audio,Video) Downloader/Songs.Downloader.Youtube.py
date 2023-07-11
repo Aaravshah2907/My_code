@@ -59,4 +59,4 @@ else:
     print("Invalid selection.")
 
 
-print(yt.title + "\nHas been successfully downloaded.")
+print(f'{yt.title} has been downloaded.')
