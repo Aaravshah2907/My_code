@@ -25,7 +25,7 @@ def possible(row, column, number):
     
     for i in range(0,3):
         for j in range(0,3):
-            if grid[r0+1][c0+1] == number:
+            if grid[r0+i][c0+j] == number:
                 return False
     return True
 
@@ -45,6 +45,7 @@ def solver():
     input("More Solutions?")
             
                     
-
+print("Question.")
 print(np.matrix(grid))
+print("Solutions.")
 solver()
