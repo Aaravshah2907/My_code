@@ -39,19 +39,12 @@ if media_type == "1":
 elif media_type == "2":
     video = yt.streams.filter(only_audio=True).first()
     name = yt.title.replace("/", ".")
-    name = name.replace("\\", ".")
-    name = name.replace("|", ".")
-    name = name.replace("*", ".")
-    name = name.replace("?", ".")
-    name = name.replace('"', ".")
-    name = name.replace('<', ".")
-    name = name.replace('>', ".")
-    name = name.replace(':', ".")
+    name = name.replace("\\", ".").replace("|", ".").replace("*", ".").replace(
+        "?", ".").replace('"', ".").replace('<', ".").replace('>', ".").replace(':', ".")
 
     video.download(output_path=path2, filename=name+"."+yt.author+".mp3")
 
 else:
     print("Invalid selection.")
 
-
-print(f'{yt.title} has been downloaded.')
+print(f'{yt.title} downloaded in {video.resolution}')
