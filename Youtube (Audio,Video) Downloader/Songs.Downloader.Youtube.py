@@ -30,23 +30,23 @@ else:
 
 if media_type == "1":
     video = yt.streams.get_highest_resolution()
-    print(f'{yt.title} starting to download in {video.resolution}')
     name = yt.title.replace("/", ".")
     name = name.replace("\\", ".").replace("|", ".").replace("*", ".").replace(
         "?", ".").replace('"', ".").replace('<', ".").replace('>', ".").replace(':', ".")
 
     video.download(output_path=path1, filename=name+'.mp4')
-    print(f'{yt.title} downloaded in {video.resolution}')
+    size = video.filesize/1024
+    print(f'{yt.title} downloaded in {video.resolution}, space consumed is {size} mb')
 
 elif media_type == "2":
     video = yt.streams.filter(only_audio=True).first()
-    print(f'{yt.title} by {yt.author} starting to download in {video.filesize}')
+    size = video.filesize_approx/1024
     name = yt.title.replace("/", ".")
     name = name.replace("\\", ".").replace("|", ".").replace("*", ".").replace(
         "?", ".").replace('"', ".").replace('<', ".").replace('>', ".").replace(':', ".")
 
     video.download(output_path=path2, filename=name+"."+yt.author+".mp3")
-    print(f'{yt.title} by {yt.author} downloaded in {video.filesize}')
+    print(f'{yt.title} by {yt.author} downloaded in {size} mb')
 
 else:
     print("Invalid selection.")
