@@ -35,12 +35,12 @@ if media_type == "1":
         "?", ".").replace('"', ".").replace('<', ".").replace('>', ".").replace(':', ".")
 
     video.download(output_path=path1, filename=name+'.mp4')
-    size = video.filesize/1024
+    size = video.filesize/1048576
     print(f'{yt.title} downloaded in {video.resolution}, space consumed is {size} mb')
 
 elif media_type == "2":
     video = yt.streams.filter(only_audio=True).first()
-    size = video.filesize_approx/1024
+    size = video.filesize_approx/1048576
     name = yt.title.replace("/", ".")
     name = name.replace("\\", ".").replace("|", ".").replace("*", ".").replace(
         "?", ".").replace('"', ".").replace('<', ".").replace('>', ".").replace(':', ".")
