@@ -1,46 +1,27 @@
-"""
-######################################################################
-Simple Text Email Python Script
-Coded By "The Intrigued Engineer" over a coffee
-Thanks For Watching!!!
-######################################################################
-"""
 import smtplib
 import ssl
+from email.message import EmailMessage
 
-# Setup port number and server name
-
-smtp_port = 587  # Standard secure SMTP port
-smtp_server = "smtp.gmail.com"  # Google SMTP Server
-
+subject = 'Email from python'
+body = 'Test e-mail'
 email_from = "aaravshah0011@gmail.com"
 email_to = "aaravshah0011@gmail.com"
+with open('pswd.txt', 'r') as file:
+    pswd = file.read()
 
-pswd = "elksvwkmsaisydex"
 
-# content of message
+message = EmailMessage()
+message["From"] = email_from
+message["To"] = email_to
+message['Subject'] = subject
+message.set_content(body)
 
-message = "Dear god, please help!!!"
+context = ssl.create_default_context()
 
-# Create context
-simple_email_context = ssl.create_default_context()
-
-try:
-    # Connect to the server
-    print("Connecting to server...")
-    TIE_server = smtplib.SMTP(smtp_server, smtp_port)
-    TIE_server.starttls(context=simple_email_context)
-    TIE_server.login(email_from, pswd)
-    print("Connected to server :-)")
-
-    # Send the actual email
-    print()
-    print(f"Sending email to - {email_to}")
-    TIE_server.sendmail(email_from, email_to, message)
-    print(f"Email successfully sent to - {email_to}")
-    # Close the Port
-    TIE_server.quit()
-
-# If there's an error, print it out
-except Exception as e:
-    print(e)
+print("Sending Email!!")
+with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+    server.login(email_from, pswd)
+    server.sendmail(from_addr=email_from, to_addrs=email_to, msg=message.as_string()) 
+    
+print("Done!")
+    
