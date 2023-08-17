@@ -37,9 +37,15 @@ spnbox.pack()
 spnbox.bind('<<Increment>>', lambda event: print(f'{trial_str.get()} was selected'))
 # spnbox_label = ttk.Label(window, text=food_str.get())
 # By defualt the second bind function will only execute.
-spnbox.bind('<<Decrement>>', lambda event: spnbox_label.configure(text=f'{trial_str.get()} was selected'))
-spnbox_label = ttk.Label(window, text = 'A trial')
-spnbox_label.pack()
+spnbox.bind('<<Decrement>>', lambda event: print(f'{trial_str.get()} was selected'))
 
+
+# exercise
+ex_letters = ['A', 'B', 'C', 'D', 'E']
+ex_str = tk.StringVar(value=ex_letters[0])
+ex_spin = ttk.Spinbox(window, textvariable=ex_str, values= ex_letters)
+ex_spin.pack()
+
+ex_spin.bind('<<Decrement>>', lambda event: print(f'{ex_str.get()} was selected to be decremented'))
 # run
 window.mainloop()
