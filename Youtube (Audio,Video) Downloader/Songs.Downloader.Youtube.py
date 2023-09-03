@@ -8,8 +8,8 @@ print("Select download format:")
 print("1: Video file with audio (.mp4)")
 print("2: Audio only (.mp3)")
 media_type = input()
-path1 = r'E:\Others\Youtube_Downloaded_Videos'
-path2 = r'E:\Others\Songs_Downloaded'
+path1 = r'D:\Videos'
+path2 = r'D:\Music'
 path_exist1 = os.path.exists(path1)
 path_exist2 = os.path.exists(path2)
 
