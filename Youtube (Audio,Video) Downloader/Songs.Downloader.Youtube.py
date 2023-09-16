@@ -1,8 +1,7 @@
 from pytube import YouTube
 import os
 
-yt = YouTube(
-    url=str(input("Enter the URL of the video you want to download: \n>> ").strip()))
+yt = YouTube(url=str(input("Enter the URL of the video you want to download: \n>> ").strip()))
 
 print("Select download format:")
 print("1: Video file with audio (.mp4)")
