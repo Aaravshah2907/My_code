@@ -1,7 +1,8 @@
 from pytube import YouTube
 import os
 
-yt = YouTube(url=str(input("Enter the URL of the video you want to download: \n>> ").strip()))
+yt = YouTube(url=str(
+    input("Enter the URL of the video you want to download: \n>> ").strip()))
 
 print("Select download format:")
 print("1: Video file with audio (.mp4)")
@@ -28,7 +29,7 @@ else:
     pass
 
 if media_type == "1":
-    video = yt.streams.get_highest_resolution()
+    video = yt.streams.get_by_resolution('720p')
     name = yt.title.replace("/", ".")
     name = name.replace("\\", ".").replace("|", ".").replace("*", ".").replace(
         "?", ".").replace('"', ".").replace('<', ".").replace('>', ".").replace(':', ".")

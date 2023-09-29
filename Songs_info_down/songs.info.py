@@ -4,7 +4,8 @@ import sys
 
 
 def do(a, b):
-    response = requests.get(f"https://itunes.apple.com/search?entity=song&limit={a}&term={b}")
+    response = requests.get(
+        f"https://itunes.apple.com/search?entity=song&limit={a}&term={b}")
     obj = response.json()
     for result in obj['results']:
         print(result['trackName'])
