@@ -75,6 +75,6 @@ try:
         decision = 'Unidentified Function!'
         calculated_output = "Get a Life!"
 except ValueError:
-    calculated_output = "ValueError"
+    calculated_output = "Anpad Gawar!!"
 
 print(calculated_output)
