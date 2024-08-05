@@ -32,8 +32,8 @@ while loop_left > 0:
     if guess in set_letters:
         set_letters.remove(guess)
         print("Word left            :   ", word_display())
-    elif word_display() == word:
-        loop_left = 0
+        if word_display() == word:
+            loop_left = 0
     elif guess in word:
         print("Letter Already used")
     else:
@@ -48,4 +48,4 @@ else:
     print("Sorry, better luck next time")
     print("The word was :", word)
 
-time.sleep(12.45)
+time.sleep(5.50)
