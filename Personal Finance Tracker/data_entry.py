@@ -2,6 +2,7 @@ from datetime import datetime
 
 date_format = "%d-%m-%Y"
 CATEGORIES = {"I": "Income", "E": "Expense"}
+MODES = {"C":"Cash","O":"Online"}
 
 
 def get_date(prompt, allow_default=False):
@@ -36,6 +37,13 @@ def get_category():
     print("Invalid category. Please enter 'I' for Income or 'E' for Expense.")
     return get_category()
 
+def get_mode():
+    category = input("Enter the category ('C' for Cash or 'O' for Online): ").upper()
+    if category in MODES:
+        return MODES[category]
 
-def get_descriptipn():
+    print("Invalid category. Please enter 'C' for Cash or 'O' for Online.")
+    return get_mode()
+
+def get_description():
     return input("Enter a description (optional): ")

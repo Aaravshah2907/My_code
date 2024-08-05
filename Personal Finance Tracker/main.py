@@ -1,13 +1,13 @@
 import pandas as pd
 import csv
 from datetime import datetime
-from data_entry import get_amount, get_category, get_date, get_descriptipn
+from data_entry import get_amount, get_category, get_date,get_mode, get_description
 import matplotlib.pyplot as plt
 
 
 class CSV:
     CSV_FILE = "finance_data.csv"
-    COLUMNS = ["date", "amount", "category", "description"]
+    COLUMNS = ["date", "amount", "category", "mode","description"]
     FORMAT = "%d-%m-%Y"
 
     @classmethod
@@ -19,11 +19,12 @@ class CSV:
             df.to_csv(cls.CSV_FILE, index=False)
 
     @classmethod
-    def add_entry(cls, date, amount, category, description):
+    def add_entry(cls, date, amount, category, mode, description):
         new_entry = {
             "date": date,
             "amount": amount,
             "category": category,
+            "mode":mode,
             "description": description,
         }
         with open(cls.CSV_FILE, "a", newline="") as csvfile:
@@ -75,8 +76,9 @@ def add():
     )
     amount = get_amount()
     category = get_category()
-    description = get_descriptipn()
-    CSV.add_entry(date, amount, category, description)
+    description = get_description()
+    mode = get_mode()
+    CSV.add_entry(date, amount, category, mode, description)
 
 
 def plot_transactions(df):
@@ -117,7 +119,7 @@ def main():
             add()
         elif choice == "2":
             start_date = get_date("Enter the start date (dd-mm-yyyy): ")
-            end_date = get_date("Enter the end date (dd-mm-yyyy): ")
+            end_date = get_date("Enter the end date (dd-mm-yyyy): ", allow_default=True)
             df = CSV.get_transactions(start_date, end_date)
             if input("Do you want to see a plot? (y/n) ").lower() == "y":
                 plot_transactions(df)
