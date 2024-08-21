@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 class CSV:
     CSV_FILE = "finance_data.csv"
-    COLUMNS = ["date", "amount", "category", "mode","description"]
+    COLUMNS = ["Date", "Amount", "Category", "Mode", "Description"]
     FORMAT = "%d-%m-%Y"
 
     @classmethod
@@ -21,11 +21,11 @@ class CSV:
     @classmethod
     def add_entry(cls, date, amount, category, mode, description):
         new_entry = {
-            "date": date,
-            "amount": amount,
-            "category": category,
-            "mode":mode,
-            "description": description,
+            "Date": date,
+            "Amount": amount,
+            "Category": category,
+            "Mode": mode,
+            "Description": description,
         }
         with open(cls.CSV_FILE, "a", newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=cls.COLUMNS)
@@ -35,11 +35,11 @@ class CSV:
     @classmethod
     def get_transactions(cls, start_date, end_date):
         df = pd.read_csv(cls.CSV_FILE)
-        df["date"] = pd.to_datetime(df["date"], format=CSV.FORMAT)
+        df["Date"] = pd.to_datetime(df["Date"], format=CSV.FORMAT)
         start_date = datetime.strptime(start_date, CSV.FORMAT)
         end_date = datetime.strptime(end_date, CSV.FORMAT)
 
-        mask = (df["date"] >= start_date) & (df["date"] <= end_date)
+        mask = (df["Date"] >= start_date) & (df["Date"] <= end_date)
         filtered_df = df.loc[mask]
 
         if filtered_df.empty:
@@ -50,15 +50,15 @@ class CSV:
             )
             print(
                 filtered_df.to_string(
-                    index=False, formatters={"date": lambda x: x.strftime(CSV.FORMAT)}
+                    index=False, formatters={"Date": lambda x: x.strftime(CSV.FORMAT)}
                 )
             )
 
-            total_income = filtered_df[filtered_df["category"] == "Income"][
-                "amount"
+            total_income = filtered_df[filtered_df["Category"] == "Income"][
+                "Amount"
             ].sum()
-            total_expense = filtered_df[filtered_df["category"] == "Expense"][
-                "amount"
+            total_expense = filtered_df[filtered_df["Category"] == "Expense"][
+                "Amount"
             ].sum()
             print("\nSummary:")
             print(f"Total Income: ${total_income:.2f}")
@@ -118,7 +118,7 @@ def main():
         if choice == "1":
             add()
         elif choice == "2":
-            start_date = get_date("Enter the start date (dd-mm-yyyy): ")
+            start_date = get_date("Enter the start date (dd-mm-yyyy): ",allow_default=True)
             end_date = get_date("Enter the end date (dd-mm-yyyy): ", allow_default=True)
             df = CSV.get_transactions(start_date, end_date)
             if input("Do you want to see a plot? (y/n) ").lower() == "y":

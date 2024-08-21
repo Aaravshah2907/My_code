@@ -1,6 +1,9 @@
-date,amount,category,description
-03-08-2024,440.0,Expense,Cash,Books C'not
+Date,Amount in Rs.,Category,Mode,Description,
+03-08-2024,440.0,Expense,Cash,Books C'not,,
 03-08-2024,105.0,Expense,Cash,Jhaadu + Marker
 04-08-2024,60.0,Expense,Cash,Budh Redi - Choole Kulcha
 02-08-2024,5500.0,Income,Cash,First Year Books
 05-08-2024,10.0,Expense,Cash,Chaas
+08-08-2024,40.0,Expense,Online,Maaza
+10-08-2024,1500.0,Expense,Cash,MNC Treat - DCC C'not
+11-08-2024,35.0,Expense,Online,Paapdi Chaat,,,,
