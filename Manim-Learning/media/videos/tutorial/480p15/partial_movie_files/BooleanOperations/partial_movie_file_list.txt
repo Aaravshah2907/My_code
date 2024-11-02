@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/1185818338_2557985100_223132457.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_3030701953_3442361797.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_999345316_3021186695.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_4002353119_89427966.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_4066903263_1560134841.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_44593734_3265810372.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_1867498134_1780407901.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_1946659211_1959207990.mp4'
+file 'file:E:/My_code/Manim-Learning/media/videos/tutorial/480p15/partial_movie_files/BooleanOperations/624642324_3636716371_1782777015.mp4'
