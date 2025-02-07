@@ -14,8 +14,10 @@ def select_function():
         file_to_run = "Spotify-Jam.sh"
     elif choose_the_code_you_want_to_run_var.get() == "Wifi":
         file_to_run = "Wifi-Login.sh"
-    elif choose_the_code_you_want_to_run_var.get() == "Main_Code":
+    elif choose_the_code_you_want_to_run_var.get() == "Main-Code":
         file_to_run = "Main-Code.sh"
+    elif choose_the_code_you_want_to_run_var.get() == "Shell-Scripts":
+        file_to_run = "Shell-Scripts-Update.sh"
     else:
         print("Error")
     
@@ -28,7 +30,7 @@ main.geometry("360x175")
 main.config(bg="#E4E2E2")
 main.title("Shell Runner")
 
-choose_the_code_you_want_to_run_options = ["Books","Phy Lab","Automation","Spotify Jam","Wifi","Main_Code"]
+choose_the_code_you_want_to_run_options = ["Books","Phy Lab","Automation","Spotify Jam","Wifi","Main-Code","Shell-Scripts"]
 choose_the_code_you_want_to_run_var = tk.StringVar(value="Choose Program")
 choose_the_code_you_want_to_run = tk.OptionMenu(main, choose_the_code_you_want_to_run_var, *choose_the_code_you_want_to_run_options)
 choose_the_code_you_want_to_run.config(bg="#fff", fg="#000", bd=1, relief=tk.SUNKEN, font=("Helvetica", 20, ), cursor="arrow", padx=80)
