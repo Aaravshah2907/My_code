@@ -48,7 +48,7 @@ def main():
         print("Media type: 1 for video with audio (.mp4), 2 for audio only (.mp3)")
         return
     
-    if sys.argv[1] in ['-h', '--help']:
+    if sys.argv[1] in ['-h', '--help', '-help', 'help', '-?', '-man']:
         print("Usage: python Youtube.py [<YouTube URL> <media type>]")
         print("Media type: 1 for video with audio (.mp4), 2 for audio only (.mp3)")
         return
